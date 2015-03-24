@@ -74,7 +74,29 @@ game.PlayerEntity = me.Entity.extend({
         
         this._super(me.Entity, "update", [delta]);
         return true;
-    }
+    },
+    
+    collideHandler: function(responce) {
+        if(responce.b.type==='EnemyBaseEntity'){
+            var ydif = this.pos.y - responce.b.pos.y;
+            var xdif = this.pos.x - responce.b.pos.x;
+            
+            console.log("xdif " + xdif + " ydif " + ydif);
+            
+            if(ydif<-40 && xdif< 70 && xdif>-35 && ydif<0){
+                this.body.falling = false;
+                this.body.vel.y = -1;
+            }
+          
+            else if(xdif>-35 && this.facing==='right'){
+                this.body.vel.x = 0;
+                this.pos.x = this.pos.x -1;
+            }else if(xdif<60 && this.facing==='left'){
+                this.body.vel.x = 0;
+                this.pos.x = this.pos.x +1;
+            }
+        }
+    }   
     });
 
 game.PlayerBaseEntity = me.Entity.extend({
@@ -92,8 +114,6 @@ game.PlayerBaseEntity = me.Entity.extend({
         this.broken = false;
         this.health = 10;
         this.alwaysUpdate = true;
-        this.body.onCollision = this.onCollision.bind(this);
-        console.log("init");
         this.type = "PlayerBaseEntity";
         
         this.renderable.addAnimation("idle", [0]);
@@ -106,15 +126,15 @@ game.PlayerBaseEntity = me.Entity.extend({
             this.broken = true;
             this.renderable.setCurrentAnimation("broken");
         }
+        
         this.body.update(delta);
         
         this._super(me.Entity, "update", [delta]);
         return true;
     },
     
-    onCollision: function(){
-        
-    }
+    
+    
     
 });
 

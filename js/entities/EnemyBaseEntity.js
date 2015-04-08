@@ -1,4 +1,4 @@
-game.PlayerBaseEntity = me.Entity.extend({
+game.EnemyBaseEntity = me.Entity.extend({
     init : function(x, y, settings){
         this._super(me.Entity, 'init', [x, y, {
             image: "tower",
@@ -11,10 +11,11 @@ game.PlayerBaseEntity = me.Entity.extend({
             }
         }]);
         this.broken = false;
-        this.health = game.data.playerBaseHealth;
+        this.health = game.data.enemyBaseHealth;
         this.alwaysUpdate = true;
         this.body.onCollision = this.onCollision.bind(this);
-        this.type = "PlayerBase";
+        
+        this.type = "EnemyBaseEntity";
         
         this.renderable.addAnimation("idle", [0]);
         this.renderable.addAnimation("broken", [1]);
@@ -26,18 +27,20 @@ game.PlayerBaseEntity = me.Entity.extend({
             this.broken = true;
             this.renderable.setCurrentAnimation("broken");
         }
-        
         this.body.update(delta);
         
         this._super(me.Entity, "update", [delta]);
         return true;
     },
     
-      onCollision: function(){
+    onCollision: function(){
         
+    },
+    
+    loseHealth: function(){
+        this.health--;
     }
     
 });
-
 
 

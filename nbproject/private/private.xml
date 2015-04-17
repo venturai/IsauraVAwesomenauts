@@ -5,12 +5,9 @@
         <group>
             <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/entities/PlayerBaseEntity.js</file>
             <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/entities/GameManager.js</file>
-            <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/entities/EnemyBaseEntity.js</file>
-            <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/entities/EnemyCreep.js</file>
             <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/game.js</file>
             <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/screens/play.js</file>
-            <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/index.php</file>
-            <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/entities/entities.js</file>
+            <file>file:/C:/xampp/htdocs/IsauraVAwesomenauts/js/screens/title.js</file>
         </group>
     </open-files>
 </project-private>

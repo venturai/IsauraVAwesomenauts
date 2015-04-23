@@ -32,6 +32,7 @@ var game = {
                 win: "",
                 pausePos: "",
                 buyscreen: "",
+                buytext: ""
                 
     },
                 
@@ -81,6 +82,8 @@ var game = {
                 me.pool.register("GameTimerManager", game.GameTimerManager);
                 me.pool.register("HeroDeathManager", game.HeroDeathManager);
                 me.pool.register("ExperienceManager", game.ExpirenceManager);
+                me.pool.register("SpendGold", game.SpendGold);
+                
             
 		me.state.set(me.state.MENU, new game.TitleScreen());
 		me.state.set(me.state.PLAY, new game.PlayScreen());

@@ -30,7 +30,10 @@
 		<script type="text/javascript" src="js/entities/entities.js"></script>
 		<script type="text/javascript" src="js/entities/EnemyBaseEntiy"></script>
                 <script type="text/javascript" src="js/entities/PlayerBaseEntity"></script>
-                <script type="text/javascript" src="js/entities/GameManager"></script>
+                <script type="text/javascript" src="js/gamemangers/GameManager"></script>
+                <script type="text/javascript" src="js/gamemanagers/GameTimerManager"></script>
+                <script type="text/javascript" src="js/gamemanagers/SpendGold"></script>
+                <script type="text/javascript" src="js/gamemanagers/HeroDeathManager"></script>
                 <script type="text/javascript" src="js/entities/EnemyCreep"></script>
                 <script type="text/javascript" src="js/entities/HUD.js"></script>
                 

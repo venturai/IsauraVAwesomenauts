@@ -10,10 +10,10 @@
     $hashedPassword = crypt($password, $salt);
     
     $query = $_SESSION["connection"]->query("INSERT INTO users SET "
-            . "email= '$email',"
+            . "email= '',"
             . "username = '$username',"
             . "password = '$hashedPassword',"
-            . "salt = '$salt', ")
+            . "salt = '$salt', "
             . "exp = 0, "
             . "exp1 = 0, "
             . "exp2 = 0, "
@@ -27,6 +27,6 @@
         echo "true";
     }
     else {
-       $_SESSION["name"] = $username;
+        echo "<p>" . $_SESSION["connection"]->error . "</p>";
     }
 
